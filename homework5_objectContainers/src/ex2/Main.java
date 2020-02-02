@@ -1,4 +1,8 @@
 package ex2;
+/**
+ * In this class I created 3 hobbies that can be practiced in 3 couuntries having adresses and codes, by 3 different persons.
+ *
+ */
 
 import java.util.*;
 
@@ -42,6 +46,12 @@ public class Main {
         showHobbies(hobbiesMap, Nicu);
     }
 
+    /**
+     * This method shows the hobbies of the given person
+     *
+     * @param map is the map that keeps person as key and hobbies as values
+     * @param p is the given person
+     */
     private static void showHobbies(Map<Persoana, List<Hobby>> map, Persoana p) {
         for (Hobby h : map.get(p)) {
             System.out.println(p.getName() + "'s " + h.toString());

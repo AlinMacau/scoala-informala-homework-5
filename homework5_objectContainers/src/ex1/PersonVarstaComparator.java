@@ -1,4 +1,8 @@
 package ex1;
+/**
+ * Comparator class - compare two objects depending on given age
+ *
+ */
 
 import java.util.Comparator;
 

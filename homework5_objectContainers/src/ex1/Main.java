@@ -4,10 +4,8 @@ import java.util.Set;
 import java.util.TreeSet;
 
 /**
- * 1. You need to store Persoane in a TreeSet. Define one comparator for age in reverse order.
- * When used when creating the TreeSet, the comparator will sort the persons in the collection by age from highest to lowest.
- * <p>
- * Add Persons to the TreeSet; iterate through the treeset and print the name and the age;
+ *Creating three objects and adding them into a Set
+ *
  */
 
 public class Main {
