@@ -1,15 +1,15 @@
 import java.time.LocalTime;
 
 public class Athlete {
-    int AthleteNumber;
-    String AthleteName;
-    String CountryCode;
-    String ShootingRange1;
-    String ShootingRange2;
-    String ShootingRange3;
-    LocalTime SkiTimeResult;
-    int counter;
-    LocalTime InitialTime;
+    private int AthleteNumber;
+    private String AthleteName;
+    private String CountryCode;
+    private String ShootingRange1;
+    private String ShootingRange2;
+    private String ShootingRange3;
+    private LocalTime SkiTimeResult;
+    private int counter;
+    private LocalTime InitialTime;
 
     public Athlete(int AthleteNumber, String AthleteName, String CountryCode, LocalTime SkiTimeResult, String ShootingRange1,
                    String ShootingRange2, String ShootingRange3, LocalTime InitialTime) {
@@ -46,28 +46,9 @@ public class Athlete {
         return SkiTimeResult;
     }
 
-    public int getAthleteNumber() {
-        return AthleteNumber;
-    }
 
     public String getAthleteName() {
         return AthleteName;
-    }
-
-    public String getCountryCode() {
-        return CountryCode;
-    }
-
-    public String getShootingRange1() {
-        return ShootingRange1;
-    }
-
-    public String getShootingRange2() {
-        return ShootingRange2;
-    }
-
-    public String getShootingRange3() {
-        return ShootingRange3;
     }
 
     public LocalTime getSkiTimeResult() {
