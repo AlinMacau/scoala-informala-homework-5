@@ -8,7 +8,6 @@ import java.util.List;
 
 public class Biathlon {
     List<Athlete> initialList = new ArrayList<>();
-    List<Athlete> finalList = new ArrayList<>();
 
     public List<Athlete> createAthletes() throws IOException {
         try (BufferedReader br = new BufferedReader(new FileReader("homework7_IO/results.txt"))) {
@@ -42,10 +41,6 @@ public class Biathlon {
         System.out.println("Winner - " + initialList.get(0).getAthleteName() + " " + initialList.get(0).getSkiTimeResult() + " (" + initialList.get(0).getInitialTime() + " + " + initialList.get(0).getCounter() + ")");
         System.out.println("Runner-up -  " + initialList.get(1).getAthleteName() + " " + initialList.get(1).getSkiTimeResult() + " (" + initialList.get(1).getInitialTime() + " + " + initialList.get(1).getCounter() + ")");
         System.out.println("Third place -  " + initialList.get(2).getAthleteName() + " " + initialList.get(2).getSkiTimeResult() + " (" + initialList.get(2).getInitialTime() + " + " + initialList.get(2).getCounter() + ")");
-
-//        for (int i = 0; i <initialList.size() ; i++) {
-//            finalList.add(initialList.get(i));
-//        }
 
         return initialList;
     }
