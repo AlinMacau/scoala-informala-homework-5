@@ -12,7 +12,7 @@ public class Main {
         Biathlon Brasov2020 = new Biathlon();
         Brasov2020.createAthletes();
         Brasov2020.standingCalculation();
-
+        System.out.println(Brasov2020.initialList.get(0).getAthleteName());
 
     }
 }

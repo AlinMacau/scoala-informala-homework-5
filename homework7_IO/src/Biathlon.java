@@ -43,9 +43,10 @@ public class Biathlon {
         System.out.println("Runner-up -  " + initialList.get(1).getAthleteName() + " " + initialList.get(1).getSkiTimeResult() + " (" + initialList.get(1).getInitialTime() + " + " + initialList.get(1).getCounter() + ")");
         System.out.println("Third place -  " + initialList.get(2).getAthleteName() + " " + initialList.get(2).getSkiTimeResult() + " (" + initialList.get(2).getInitialTime() + " + " + initialList.get(2).getCounter() + ")");
 
-        for (int i = 0; i <initialList.size() ; i++) {
-            finalList.add(initialList.get(i));
-        }
-        return finalList;
+//        for (int i = 0; i <initialList.size() ; i++) {
+//            finalList.add(initialList.get(i));
+//        }
+
+        return initialList;
     }
 }

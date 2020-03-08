@@ -11,8 +11,8 @@ public class Athlete {
     private int counter;
     private LocalTime InitialTime;
 
-    public Athlete(int AthleteNumber, String AthleteName, String CountryCode, LocalTime SkiTimeResult, String ShootingRange1,
-                   String ShootingRange2, String ShootingRange3, LocalTime InitialTime) {
+    public Athlete(int AthleteNumber, String AthleteName, String CountryCode, LocalTime SkiTimeResult,
+                   String ShootingRange1, String ShootingRange2, String ShootingRange3, LocalTime InitialTime) {
         this.AthleteNumber = AthleteNumber;
         this.AthleteName = AthleteName;
         this.CountryCode = CountryCode;
@@ -45,7 +45,6 @@ public class Athlete {
         }
         return SkiTimeResult;
     }
-
 
     public String getAthleteName() {
         return AthleteName;
