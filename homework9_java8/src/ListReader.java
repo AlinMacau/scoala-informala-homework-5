@@ -1,4 +1,5 @@
 import java.io.*;
+import java.nio.charset.StandardCharsets;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -9,7 +10,8 @@ public class ListReader {
     List<Person> personList = new ArrayList<>();
 
     public void getPersonList(String path) throws IOException {
-        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        BufferedReader br = new BufferedReader(new InputStreamReader(
+                new FileInputStream(path), StandardCharsets.UTF_8));
         String t;
         while ((t = br.readLine()) != null) {
             String[] person = t.split(",");
@@ -18,15 +20,15 @@ public class ListReader {
             String[] date = person[1].split("-");
             LocalDate birthdate = LocalDate.of(Integer.parseInt(date[0]), Integer.parseInt(date[1]), Integer.parseInt(date[2]));
 
-            System.out.println(new Person(name, birthdate));
+            personList.add(new Person(name, birthdate));
         }
-//        this.personList = personList;
+        this.personList = personList;
     }
 
     public void getOrderedList(List<Person> lista, int month) {
         List<String> orderedList = new ArrayList<>();
         for (Person p : lista) {
-            if (p.getBirthdate().getDayOfMonth() == month) {
+            if (p.getBirthdate().getMonthValue() == month) {
                 orderedList.add(p.getName());
             }
         }
@@ -41,7 +43,7 @@ public class ListReader {
         });
 
         try (BufferedWriter out = new BufferedWriter(new FileWriter("out.txt"))) {
-
+            orderedList.forEach();
         } catch (IOException e) {
             e.printStackTrace();
         }
