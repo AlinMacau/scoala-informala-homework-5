@@ -6,6 +6,7 @@ public class Main {
         listReader.getPersonList("homework9_java8/src/list.txt");
         System.out.println(listReader.personList);
         listReader.getOrderedList(listReader.personList, 2);
+        listReader.printer(listReader.orderedList);
     }
 
 

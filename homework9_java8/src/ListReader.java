@@ -8,6 +8,8 @@ import java.util.List;
 
 public class ListReader {
     List<Person> personList = new ArrayList<>();
+    List<String> orderedList = new ArrayList<>();
+
 
     public void getPersonList(String path) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(
@@ -41,15 +43,16 @@ public class ListReader {
                 return o1.compareTo(o2);
             }
         });
+        this.orderedList = orderedList;
+    }
 
+    public void printer(List listToPrint) throws IOException{
         try (BufferedWriter out = new BufferedWriter(new FileWriter("out.txt"))) {
-            orderedList.forEach(element ->{
-                out.write(element);
+            listToPrint.forEach(element -> {
+                out.write(element.toString());
             });
-
         } catch (IOException e) {
             e.printStackTrace();
         }
-
     }
 }
