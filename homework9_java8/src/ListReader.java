@@ -46,6 +46,7 @@ public class ListReader {
             orderedList.forEach(element ->{
                 out.write(element);
             });
+
         } catch (IOException e) {
             e.printStackTrace();
         }
