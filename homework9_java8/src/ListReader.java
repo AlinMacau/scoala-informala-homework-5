@@ -43,9 +43,12 @@ public class ListReader {
         });
 
         try (BufferedWriter out = new BufferedWriter(new FileWriter("out.txt"))) {
-            orderedList.forEach();
+            orderedList.forEach(element ->{
+                out.write(element);
+            });
         } catch (IOException e) {
             e.printStackTrace();
         }
+
     }
 }
