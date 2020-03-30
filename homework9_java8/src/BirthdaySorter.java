@@ -6,10 +6,9 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 
-public class ListReader {
+public class BirthdaySorter {
     List<Person> personList = new ArrayList<>();
     List<String> orderedList = new ArrayList<>();
-
 
     public void getPersonList(String path) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(
@@ -28,7 +27,7 @@ public class ListReader {
     }
 
     public void getOrderedList(List<Person> lista, int month) {
-        List<String> orderedList = new ArrayList<>();
+
         for (Person p : lista) {
             if (p.getBirthdate().getMonthValue() == month) {
                 orderedList.add(p.getName());
@@ -43,16 +42,14 @@ public class ListReader {
                 return o1.compareTo(o2);
             }
         });
-        this.orderedList = orderedList;
-    }
+     }
 
-    public void printer(List listToPrint) throws IOException{
-        try (BufferedWriter out = new BufferedWriter(new FileWriter("out.txt"))) {
-            listToPrint.forEach(element -> {
-                out.write(element.toString());
-            });
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
+     public void writeList(List theList){
+         try (OutputStreamWriter out = new OutputStreamWriter (new FileOutputStream("out.txt"))) {
+             theList.forEach(element -> { try { out.write(element.toString() + "\n"); } catch(IOException e) {} }
+             );
+         } catch (IOException e) {
+             e.printStackTrace();
+         }
+     }
 }
