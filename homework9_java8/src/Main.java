@@ -5,6 +5,7 @@ public class Main {
         BirthdaySorter bs = new BirthdaySorter();
         bs.getPersonList("homework9_java8/src/list.txt");
         bs.getOrderedList(bs.personList, 2);
+
         bs.writeList(bs.orderedList);
 
     }

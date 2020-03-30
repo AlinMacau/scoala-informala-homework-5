@@ -34,7 +34,6 @@ public class BirthdaySorter {
             }
         }
 
-        System.out.println(orderedList);
 
         Collections.sort(orderedList, new Comparator<String>() {
             @Override
@@ -52,4 +51,5 @@ public class BirthdaySorter {
              e.printStackTrace();
          }
      }
+
 }
