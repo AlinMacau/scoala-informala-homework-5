@@ -2,31 +2,43 @@ import java.sql.Connection;
 import java.sql.SQLException;
 import java.sql.*;
 
-public class Main {
+public class BookingDB {
     public static void main(String[] args) {
-//        createAccomodation();
-//        createRoomFair();
-//        createAccomodationFairRelation();
-//
-//        insertAccomodation(1, "single", "single", 1, "camera cu balcon");
-//        insertAccomodation(2, "apartament", "double + supraetajat", 4, "camera cu balcon");
-//        insertAccomodation(3, "double", "double", 2, "camera cu balcon");
-//        insertAccomodation(4, "single", "single", 1, "camera fara balcon");
-//        insertAccomodation(5, "double", "double", 2, "camera fara balcon");
-//
-//
-//        insertRoomfair(1,142.5,"off season");
-//        insertRoomfair(2,332.5,"season");
-//        insertRoomfair(3,237.5,"off season");
-//        insertRoomfair(4,427.5,"season");
+        createDatabaseBooking();
+        createAccomodation();
+        createRoomFair();
+        createAccomodationFairRelation();
 
-//        insertAccomodationFairRelation(1,2,4);
-//        insertAccomodationFairRelation(2,5,1);
-//        insertAccomodationFairRelation(3,3,2);
-//        insertAccomodationFairRelation(4,1,2);
-//        insertAccomodationFairRelation(5,4,3);
+        insertAccomodation(1, "single", "single", 1, "camera cu balcon");
+        insertAccomodation(2, "apartament", "double + supraetajat", 4, "camera cu balcon");
+        insertAccomodation(3, "double", "double", 2, "camera cu balcon");
+        insertAccomodation(4, "single", "single", 1, "camera fara balcon");
+        insertAccomodation(5, "double", "double", 2, "camera fara balcon");
+
+
+        insertRoomfair(1,142.5,"off season");
+        insertRoomfair(2,332.5,"season");
+        insertRoomfair(3,237.5,"off season");
+        insertRoomfair(4,427.5,"season");
+
+        insertAccomodationFairRelation(1,2,4);
+        insertAccomodationFairRelation(2,5,1);
+        insertAccomodationFairRelation(3,3,2);
+        insertAccomodationFairRelation(4,1,2);
+        insertAccomodationFairRelation(5,4,3);
 
         selectRoomPrices();
+    }
+
+    public static void createDatabaseBooking() {
+        try (Connection conn = Connector.connect("mysql", "localhost", "3306", "", "root", "123456");
+             Statement stmt = conn.createStatement()) {
+            String sql = "create database booking";
+            stmt.executeUpdate(sql);
+
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
     }
 
     public static void createAccomodation() {
