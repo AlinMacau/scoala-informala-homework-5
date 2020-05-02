@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml" >
+<head>
+    <div th:include="fragments/head::head"></div>
+    <meta charset="UTF-8">
+</head>
+<body>
+<div th:include="fragments/navbar :: navbar"></div>
+<div class="card">
+    <div th:object="${recipe}" method="POST" enctype="multipart/form-data">
+        <div class="card text-center">
+            <div class="card-header" style="background-color: #DAF7A6;">
+                <img class="nav-item">
+                <img th:src="@{'data:image/jpng;base64,'+${recipe.image}}"/>
+                <h5 class="card-title" th:text="*{title}"
+                    style="font-weight:bold; text-align:center; font-size: 40px"></h5>
+            </div>
+        </div>
+        <div class="card-body">
+            <h5>Description</h5>
+            <p class="card-body" th:text="*{description}"></p>
+            <p th:text="${#strings.replace(desc, T(System).getProperty('line.separator'), '&lt;br /&gt;')}"></p>
+        </div>
+        <div class="card-body">
+            <h5>Ingredients</h5>
+            <p class="card-body" th:text="*{ingredients}"></p>
+            <p th:text="${#strings.replace(desc, T(System).getProperty('line.separator'), '&lt;br /&gt;')}"
+            ></p>
+        </div>
+        <div class="card-body">
+            <h5>Directions</h5>
+            <p class="card-title" th:text="*{directions}" ></p>
+        </div>
+    </div>
+</div>
+</body>
+
+<footer class="text-muted">
+    <div class="card text-center">
+        <form th:action="@{/recipes/edit/{id}(id= ${recipe.id})}" method="GET"/>
+        <input type="hidden" name="idReteta" th:value="${recipe.id}"/>
+        <input class="btn btn-primary" type="submit" value="Edit"></form>
+
+        <form th:action="@{/recipes}" method="POST"/>
+        <input type="hidden" name="idReteta" th:value="${recipe.id}"/>
+        <input class="btn btn-danger" type="submit" value="Sterge"></form>
+    </div>
+
+
+    <small th:object="${recipe}" method="POST"
+           enctype="multipart/form-data" style="inline">
+        <div> Created on
+            <span th:text="*{modified}"></span></div>
+        <div>Last Modified
+            <span th:text="*{created}"></span></div>
+
+    </small>
+
+</footer>
+
+</html>
