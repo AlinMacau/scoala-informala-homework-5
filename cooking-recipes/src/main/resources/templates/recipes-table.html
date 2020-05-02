@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <div th:include="fragments/head::head"></div>
+</head>
+<body>
+
+<div class="container">
+
+    <div th:include="fragments/navbar :: navbar"></div>
+
+    <div th:if="${not reteta.empty}">
+        <h1>Home</h1>
+        <table class="table">
+            <thead class="thead-dark">
+            <tr>
+                <th>Id</th>
+                <th>Title</th>
+                <th>Description</th>
+                <th>Ingredients</th>
+                <th>Directions</th>
+                <th>Category</th>
+                <th>Image</th>
+                <th>Created</th>
+                <th>Modified</th>
+                <th>Delete</th>
+            </tr>
+            </thead>
+
+            <tr th:each="object: ${reteta}">
+                <td th:text="${object.id}"></td>
+                <td th:text="${object.title}"></td>
+                <td th:text="${object.description}"></td>
+                <td th:text="${object.ingredients}"></td>
+                <td th:text="${object.directions}"></td>
+                <td th:text="${object.category.displayName}"></td>
+
+
+                <td>
+                    <form th:action="@{recipes}" method="POST"/>
+                <img th:src="@{'data:image/png;base64,'+${object.image}}"/>
+                </form></td>
+
+                <td th:text="${object.created}"></td>
+                <td th:text="${object.modified}"></td>
+
+                <td>
+                    <form th:action="@{recipes}" method="POST"/>
+                    <input type="hidden" name="idReteta" th:value="${object.id}"/>
+                    <input class="btn btn-danger" type="submit" value="Sterge">
+                    </form></td>
+
+
+            </tr>
+        </table>
+    </div>
+
+    <h2 th:if="${reteta.empty}">No authors in the database, click <a th:href="@{recipes}">here</a> to try again</h2>
+</div>
+</body>
+</html>

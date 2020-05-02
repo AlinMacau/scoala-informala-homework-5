@@ -1,0 +1,42 @@
+<div th:fragment="navbar" xmlns:th="http://www.w3.org/1999/xhtml">
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark static-top">
+        <a class="navbar-brand" href="/recipes/home">Home</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault"
+                aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="/recipes/soup">Soup <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/recipes/main-dish">Main Dish</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/recipes/salad">Salad</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/recipes/dessert">Dessert</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/recipes/miscellaneous">Miscellaneous</a>
+                </li>
+
+            </ul>
+
+            <a class="navbar-brand" href="/recipes/add">Add recipe</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault"
+                    aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <a class="navbar-brand" href="/recipes/about-me">About me</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault"
+                    aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+        </div>
+    </nav>
+</div>
